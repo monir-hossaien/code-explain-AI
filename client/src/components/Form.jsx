@@ -7,19 +7,19 @@ const Form = () => {
     const [formState, formAction, isPending] = useActionState(explanation, null);
 
 
-    useEffect(() => {
-        const saved = localStorage.getItem("formState");
-        if (saved) {
-            formAction(JSON.parse(saved)); // set the formState to saved value
-        }
-    }, []);
-
-    // Save formState to localStorage whenever it changes
-    useEffect(() => {
-        if (formState) {
-            localStorage.setItem("formState", JSON.stringify(formState));
-        }
-    }, [formState]);
+    // useEffect(() => {
+    //     const saved = localStorage.getItem("formState");
+    //     if (saved) {
+    //         formAction(JSON.parse(saved)); // set the formState to saved value
+    //     }
+    // }, []);
+    //
+    // // Save formState to localStorage whenever it changes
+    // useEffect(() => {
+    //     if (formState) {
+    //         localStorage.setItem("formState", JSON.stringify(formState));
+    //     }
+    // }, [formState]);
 
     return (
         <div className="w-full mx-auto flex flex-col border border-gray-200 rounded-md p-5">
