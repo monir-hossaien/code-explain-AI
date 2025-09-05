@@ -33,7 +33,7 @@ const Form = () => {
                         required={true}
                         id="language"
                         name="language"
-                        className="w-full text-sm  border border-gray-200 text-gray-500 rounded-md focus:outline-none py-1 px-2"
+                        className="w-full text-sm  border border-gray-200 text-gray-500 rounded-md focus:outline-none py-2 md:py-1.5 px-2"
                     >
                         <option value="javascript">JavaScript</option>
                         <option value="python">Python</option>
