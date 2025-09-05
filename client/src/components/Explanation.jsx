@@ -1,4 +1,4 @@
-
+"use client";
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import Markdown from "react-markdown";
@@ -22,14 +22,14 @@ const Explanation = ({ formState }) => {
     };
 
     return (
-        <div className="w-full px-5 py-3 rounded-md border border-gray-200 mt-6 bg-gray-50">
+        <div className="w-full px-4 md:px-5 py-3 rounded-md border border-gray-200 mt-6 bg-gray-50 overflow-x-auto">
             {/* Header */}
-            <div className="flex items-center justify-between mb-6 text-xs text-gray-700">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 text-xs text-gray-700 gap-2 sm:gap-0">
                 <div className="font-medium capitalize">{language}</div>
                 <button
                     onClick={handleCopy}
                     type="button"
-                    className="flex gap-2 items-center px-3 py-1 text-xs font-medium rounded-md bg-gray-200 hover:bg-gray-300 active:scale-[.98] transition"
+                    className="flex gap-2 items-center px-3 py-1 text-xs font-medium rounded-md bg-gray-200 hover:bg-gray-300 active:scale-[.98] transition self-start sm:self-auto"
                 >
                     {copied ? <Check size={16} className="text-green-600" /> : <Copy size={16} />}
                     {copied ? "Copied" : "Copy"}
@@ -37,7 +37,7 @@ const Explanation = ({ formState }) => {
             </div>
 
             {/* Markdown with syntax highlighting */}
-            <div className="prose prose-sm max-w-none">
+            <div className="prose prose-sm max-w-full overflow-x-auto">
                 <Markdown
                     remarkPlugins={[remarkGfm]}
                     components={{
@@ -49,7 +49,7 @@ const Explanation = ({ formState }) => {
                                         style={oneDark}
                                         language={match[1]}
                                         PreTag="div"
-                                        className="rounded-md"
+                                        className="rounded-md text-sm sm:text-base overflow-x-auto"
                                         {...props}
                                     >
                                         {String(children).replace(/\n$/, "")}
@@ -57,7 +57,7 @@ const Explanation = ({ formState }) => {
                                 );
                             }
                             return (
-                                <code className="px-1 py-0.5 bg-gray-200 text-red-600 rounded" {...props}>
+                                <code className="px-1 py-0.5 bg-gray-200 text-red-600 rounded text-xs sm:text-sm" {...props}>
                                     {children}
                                 </code>
                             );
