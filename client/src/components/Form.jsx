@@ -1,4 +1,4 @@
-import {useActionState, useEffect} from "react";
+import {useActionState} from "react";
 import Explanation from "./Explanation.jsx";
 import {explanation} from "../actions/index.js";
 

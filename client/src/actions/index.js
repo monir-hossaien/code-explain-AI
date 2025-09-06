@@ -1,4 +1,4 @@
-"use server"; // Mark as a server action
+"use server";
 
 export async function explanation (prevState, formData){
 
